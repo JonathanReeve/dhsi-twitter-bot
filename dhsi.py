@@ -48,7 +48,11 @@ for i in range(100,50000):
                 tweet = "DHSI also stands for: \"" + match + "\" as found in " + metaParsed['title']
                 tweet += ". See http://gutenberg.org/ebooks/%s for the full text. #DHSI19" % i
                 print(tweet)
-                api.update_status(tweet)
+                try:
+                    api.update_status(tweet)
+                except:
+                    print('Twitter error. Skipping.')
+                    continue
                 lastTime = time.time()
         else: 
             print('No text here.')
