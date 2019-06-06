@@ -19,7 +19,7 @@ api = tweepy.API(auth)
 lastTime = 0
 
 baseUrl = "http://corpus-db.org"
-for i in range(200,50000):
+for i in range(109,50000):
     print('Getting text with id: %s' % i)
     metaResponse = requests.get('http://corpus-db.org/api/id/' + str(float(i)))
     if metaResponse.ok:
